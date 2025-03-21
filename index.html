@@ -3,442 +3,154 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CBT Platform</title>
-    <style>  
-      * {  
-        margin: 0;  
-        padding: 0;  
-        box-sizing: border-box;  
-      }  
-      body {  
-        font-family: Arial, Helvetica, sans-serif;  
-        line-height: 1.6;  
-        padding: 20px;  
-        overflow-x: hidden;  
-      }  
-      .container {  
-        max-width: 1200px;  
-        margin: 0 auto;  
-        text-align: center;  
-      }  
-      .timer {  
-        display: flex;  
-        justify-content: center;  
-        gap: 20px;  
-        margin: 20px 0;  
-      }  
-      .timer button {  
-        font-size: 24px;  
-        padding: 10px 20px;  
-        border-radius: 5px;  
-        background-color: #dddada;  
-        border: none;  
-        font-family: "Courier New", Courier, monospace;  
-        font-weight: bold;  
-      }  
-      #startBTN {  
-        margin: 20px 0;  
-        font-size: 18px;  
-        padding: 10px 30px;  
-        border-radius: 5px;  
-        background-color: #dddada;  
-        border: none;  
-        cursor: pointer;  
-      }  
-      .displayy {  
-        width: 100%;  
-        max-width: 800px;  
-        margin: 0 auto;  
-        font-size: 20px;  
-      }  
-      .pagee {  
-        display: flex;  
-        margin-left: 10%;  
-        gap: 30px;  
-      }  
-      .profile {  
-        font-size: 18px;  
-        font-family: Arial, Helvetica, sans-serif;  
-        background-color: rgb(202, 227, 250);  
-        padding: 20px;  
-        border-radius: 10px;  
-        flex: 1;  
-      }  
-      img {  
-        width: 180px;  
-        height: 180px;  
-        border-radius: 100px;  
-        display: block;  
-        margin: 0 auto;  
-      }  
-      .buttons button {  
-        font-size: 18px;  
-        padding: 10px 20px;  
-        border-radius: 5px;  
-        background-color: #0b0eb8;  
-        border: none;  
-        color: white;  
-        cursor: pointer;  
-      }  
-      .question-container {  
-        margin-top: 20px;  
-        font-size: 24px;  
-        padding: 10px;  
-        border-radius: 5px;  
-      }  
-      #displayResult {  
-        margin-top: 20px;  
-        font-size: 24px;  
-        padding: 10px;  
-        border-radius: 5px;  
-        text-align: center;  
-      }  
-      #previousBTN{
-        display: none;
+    <title>Login Page</title>
+    <style>
+      .container {
+        background-color: rgb(40, 81, 117);
+        padding: 10%;
+        max-width: 100%;
+        border-radius: 10px;
+        color: white;
       }
-      #nextBTN{
-        display: none;
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
       }
-      #submitBTN{
-        display: none;
+      form {
+        background-color: rgb(252, 252, 252);
+        max-width: 100%;
+        padding: 20px;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
       }
-      #displayButtons {  
-        display: flex;  
-        gap: 10px;  
-        justify-content: center;  
-        margin-top: 20px;  
-      }  
-
-      @media (max-width: 968px) {  
-        .container {  
-          padding: 10px;  
-        }  
-        .timer button {  
-          font-size: 20px;  
-        }  
-        .displayy {  
-          font-size: 18px;  
-          margin-left: 0;  
-        }  
-        .pagee {  
-          display: flex;  
-          flex-direction: column;  
-          align-items: center;  
-          margin-left: 0;  
-          gap: 20px;  
-        }  
-        .profile {  
-          width: 100%;  
-          max-width: 300px;  
-        }  
-      }  
-
-      @media (max-width: 600px) {  
-        body {  
-          padding: 10px;  
-        }  
-        .timer button {  
-          font-size: 18px;  
-          padding: 8px 15px;  
-        }  
-        .displayy {  
-          font-size: 16px;  
-        }  
-        .question-container {  
-          font-size: 20px;  
-          padding: 5px;  
-        }  
-        #startBTN {  
-          padding: 8px 15px;  
-          font-size: 16px;  
-        }  
-      }  
-
-      @media (max-width: 480px) {  
-        .timer button {  
-          font-size: 15px;  
-          padding: 6px 12px;  
-        }  
-        .displayy {  
-          font-size: 14px;  
-        }  
-        .question-container {  
-          font-size: 18px;  
-        }  
-        .buttons button {  
-          font-size: 14px;  
-          padding: 8px 15px;  
-        }  
-      }  
+      input {
+        width: 100%;
+        height: 30px;
+        border: thin solid beige;
+        margin-bottom: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+      }
+      #checkBox {
+        width: 20px;
+        height: 20px;
+      }
+      button {
+        padding: 5px 10px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 16px;
+        background-color: rgb(10, 109, 10);
+        border: none;
+        border-radius: 8px;
+        color: white;
+        width: 100%;
+        margin-top: 20px;
+      }
+      h2 {
+        text-align: center;
+        color: #ffffff;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="header">
-        <h1>Computer Based Test</h1>
-      </div>
-
-      <div class="timer" id="timer">
-        <button id="minsBTN">02</button>
-        <button id="secsBTN">00</button>
-      </div>
-      <button id="startBTN">Start</button>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div>
+          <label for="userID">Matric Number</label>
+          <input type="text" id="userID" required />
+        </div>
+        <div>
+          <label for="passWord">Password</label>
+          <input type="password" id="passWord" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
     </div>
 
-    <h1 id="displayResult"></h1>
+    <div id="display"></div>
 
-    <div class="pagee">
-      <!-- <div class="profile" id="profileDiv">
-        <img src="./AIFY6855.JPG" alt="" />
-        <h3>Full Name:</h3>
-        <p id="fullName"></p>
-        <h3>Matric Number:</h3>
-        <p id="matricNum"></p>
-      </div> -->
-      <div class="displayy" id="displayDIVV">
-        <div class="Instructions" id="displayInstructions">
-          <h2>Instructions</h2>
-          <p>Attempt all Questions</p>
-          <p>You have just 2mins to answer all Questions.</p>
-          <p>Goodluck</p>
-        </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+        getDoc,
+        doc,
+      } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
 
-        <div class="displayResult" id="displayResult">
-          <p id="result"></p>
-        </div>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBN5PBfHzneISCGAS-sFG9gbPQ9X8NIVpY",
+        authDomain: "coinhub-e63be.firebaseapp.com",
+        projectId: "coinhub-e63be",
+        storageBucket: "coinhub-e63be.firebasestorage.app",
+        messagingSenderId: "422080012670",
+        appId: "1:422080012670:web:681cb33085707a4c9b532f",
+      };
 
-        <div id="displayQuestions"></div>
-        <br />
-        <div class="buttons" id="buttonDIV">
-          <button id="previousBTN">Previous</button>
-          <button id="nextBTN">Next</button>
-          <button id="submitBTN">Submit</button>
-        </div>
-      </div>
-    </div>
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const colRef = collection(db, "profile");
 
-    <script>
-      const questions = [
-        {
-          question: "What is Javascript?",
-          options: [
-            "A programming language",
-            "A markup language",
-            "A styling language",
-            "A scripting language",
-          ],
-          answer: "A scripting language",
-        },
-        {
-          question: "What is HTML?",
-          options: [
-            "A programming language",
-            "A markup language",
-            "A styling language",
-            "A scripting language",
-          ],
-          answer: "A markup language",
-        },
-        {
-          question: "What is CSS?",
-          options: [
-            "A programming language",
-            "A markup language",
-            "A styling language",
-            "A scripting language",
-          ],
-          answer: "A styling language",
-        },
-        {
-          question: "What is PHP?",
-          options: [
-            "A programming language",
-            "A markup language",
-            "A styling language",
-            "A scripting language",
-          ],
-          answer: "A programming language",
-        },
-        {
-          question: "What is Python?",
-          options: [
-            "A programming language",
-            "A markup language",
-            "A styling language",
-            "A scripting language",
-          ],
-          answer: "A programming language",
-        },
-      ];
+      loginForm.addEventListener("submit", displayProfile);
 
-      let currentQuestion = 0;
-      let timeLeft = 1 * 60; // 10 minutes in seconds
-      let timerId = null;
-      let answered = new Array(questions.length).fill(null);
+      async function displayProfile(e) {
+        e.preventDefault();
+        try {
+          const querySnap = await getDocs(colRef);
 
-      function updateTimer() {
-        const mins = Math.floor(timeLeft / 60);
-        const secs = timeLeft % 60;
-        document.getElementById("minsBTN").textContent = mins
-          .toString()
-          .padStart(2, "0");
-        document.getElementById("secsBTN").textContent = secs
-          .toString()
-          .padStart(2, "0");
-      }
+          console.log(querySnap);
+          display.innerHTML = "";
+          querySnap.forEach((docSnap) => {
+            const actualData = docSnap.data();
+            console.log(actualData);
+          });
 
-      function displayQuestion() {
-        const displayDiv = document.getElementById("displayQuestions");
-        const nextButton = document.getElementById("nextBTN");
-        const previousButton = document.getElementById("previousBTN");
-        const submitButton = document.getElementById("submitBTN");
-        const question = questions[currentQuestion];
+          querySnap.forEach((docSnap) => {
+            const actualData = docSnap.data();
+            // Geting user input
+            const userID = document.getElementById("userID").value.trim();
+            const passWord = document.getElementById("passWord").value.trim();
 
-        let html = `  
-                <div class="question-container">   
-                    <h3>${currentQuestion + 1}. ${question.question}</h3>  
-                    ${question.options
-                      .map(
-                        (option, optIndex) => `  
-                        <div class="option-container">  
-                            <input type="radio"   
-                                  name="question${currentQuestion}"   
-                                  value="${option}"  
-                                  id="${currentQuestion}_${optIndex}"  
-                                  ${
-                                    answered[currentQuestion] === option
-                                      ? "checked"
-                                      : ""
-                                  }>  
-                            <label for="${currentQuestion}_${optIndex}">${option}</label>  
-                        </div>`
-                      )
-                      .join("")}  
-                </div>`;
+            // Basic validation
+            if (!userID || !passWord) {
+              alert("Please enter both Matric Number and Password.");
+              return;
+            }
 
-        displayDiv.innerHTML = html;
+            // Retreving stored credentials from localStorage
+            const storedMatric = actualData.matricNum;
+            const storedPassword = actualData.password;
 
-        if (currentQuestion === 0) {
-          nextButton.style.display = "inline"; // Or "inline", "inline-block", etc., depending on your layout
+            // Checking if stored data exists
+            if (storedMatric == "" || storedPassword == "") {
+              alert("No account found. Please create a profile first.");
+              // window.location.href = "/Classwork/signup.html";
+              return;
+            }
+
+            // Verify credentials
+            if (userID === storedMatric && passWord === storedPassword) {
+              alert("Login successful!");
+              window.location.href = "./pages/home.html";
+            } else {
+              alert("Invalid credentials. Please try again.");
+
+              // Check if username doesn't exist in localStorage
+              if (!storedMatric) {
+                window.location.href = "./pages/signup.html";
+              }
+            }
+          });
+        } catch (error) {
+          console.log(error);
         }
-
-        if (currentQuestion >= 1) {
-          previousButton.style.display = "inline";
-        }
-
-        if (currentQuestion === questions.length - 1) {
-          submitButton.style.display = "inline";
-        }
-      }
-
-      function displayInfo() {  
-      const fullNameElement = document.getElementById('fullName');  
-      const matricNumElement = document.getElementById('matricNum');  
-
-        // Retreving stored credentials from localStorage
-          const storedName = actualData.matricNumber;
-          const storedPassword = actualData.password;
-
-        if (fullName !== null) {  
-            fullNameElement.textContent = fullName.actualData;  
-        }  
-        if (matricNumber !== null) {  
-            matricNumElement.textContent = matricNumber.actualData;  
-        }  
-    }  
-
-        // Call the function when the page loads  
-        document.addEventListener('DOMContentLoaded', displayInfo);  
-
-      function startQuiz() {
-        document.getElementById("startBTN").style.display = "none";
-        document.getElementById("displayInstructions").style.display = "none";
-
-        currentQuestion = 0;
-        timeLeft = 2 * 60;
-        answered = new Array(questions.length).fill(null);
-        updateTimer();
-        displayQuestion();
-        startTimer();
-        showPreviousButton(); // Call the function when the quiz starts
-      }
-
-      function startTimer() {
-        timerId = setInterval(() => {
-          timeLeft--;
-          updateTimer();
-
-          if (timeLeft <= 0) {
-            clearInterval(timerId);
-            document.getElementById("submitBTN").click();
-          }
-        }, 1000);
-      }
-
-      document.getElementById("startBTN").addEventListener("click", startQuiz);
-
-      document.getElementById("submitBTN").addEventListener("click", () => {
-        let canSubmit = confirm("Are you sure you want to submit?");
-        if (canSubmit) {
-          clearInterval(timerId);
-          calculateScore();
-        }
-      });
-
-      document.getElementById("nextBTN").addEventListener("click", () => {
-        if (currentQuestion < questions.length - 1) {
-          answered[currentQuestion] =
-            document.querySelector(
-              `input[name="question${currentQuestion}"]:checked`
-            )?.value || null;
-          currentQuestion++;
-          displayQuestion();
-        }
-      });
-
-      document.getElementById("previousBTN").addEventListener("click", () => {
-        if (currentQuestion > 0) {
-          answered[currentQuestion] =
-            document.querySelector(
-              `input[name="question${currentQuestion}"]:checked`
-            )?.value || null;
-          currentQuestion--;
-          displayQuestion();
-        }
-      });
-
-      function calculateScore() {
-        const fullName = localStorage.getItem('fullName');
-        let score = 0;
-        questions.forEach((quest, i) => {
-          if (answered[i] && answered[i] === quest.answer) {
-            score++;
-          }
-        });
-
-        // Display the result
-        const resultElement = document.getElementById("displayResult");
-        resultElement.textContent = ` ${fullName}, You score ${score} out of ${questions.length}`;
-        resultElement.style.display = "block";
-
-        // Remove the class "displayy" from the parent div
-        const displayDiv = document.getElementById("displayDIVV");
-        const profile = document.getElementById("profileDiv");
-        const question = document.getElementById("displayQuestions");
-        const button = document.getElementById("buttonDIV");
-        question.style.display = "none";
-        button.style.display = "none";
-        profile.style.display = "none";
-        displayDiv.parentElement.classList.remove("displayy");
-        displayDiv.style.display = "none";
-
-        // Hide the questions container
-        displayDiv.style.display = "none";
-
-        document.getElementById(
-          "result"
-        ).textContent = `You scored ${score} out of ${questions.length}`;
-        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     </script>
   </body>
