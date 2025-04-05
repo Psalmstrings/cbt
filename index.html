@@ -64,6 +64,10 @@
           <label for="passWord">Password</label>
           <input type="password" id="passWord" required />
         </div>
+        <div class="form-group">  
+          <div id="errorP" class="text-danger"></div>  
+          <!-- <div class="loading" id="spinner"></div>   -->
+      </div>  
         <button type="submit">Login</button>
         <div style="text-align: center">
           <p>Don't have an account? <a href="./pages/signup.html">Sign Up</a></p>
@@ -142,8 +146,8 @@
               alert("Login successful!");
               window.location.href = "./pages/home.html";
             } else {
-              alert("Invalid credentials. Please try again.");
-
+              errorP.textContent = "*invalid credentials";
+              errorP.style.color = "red";
               // Check if username doesn't exist in localStorage
               if (!storedMatric) {
                 window.location.href = "./pages/signup.html";
